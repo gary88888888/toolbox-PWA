@@ -265,6 +265,7 @@ import axios from "axios";
 import { QrcodeStream, QrcodeDropZone, QrcodeCapture } from "vue-qrcode-reader";
 import {borrowSubmit} from "../api.js"
 export default {
+  name:'Borrow',
   Components: {
     QrcodeStream,
     QrcodeDropZone,
@@ -319,7 +320,7 @@ export default {
         formdata.append("box_id", content);
         axios
           .post(
-            "https://192.168.0.20/toolSystem/pwa_php/fetchTool.php",
+            "https://192.168.1.103/toolSystem/pwa_php/fetchTool.php",
             formdata,
             {}
           )
@@ -334,7 +335,7 @@ export default {
 
               axios
                 .post(
-                  "https://192.168.0.20/toolSystem/pwa_php/img.php?QRcode=" +
+                  "https://192.168.1.103/toolSystem/pwa_php/img.php?QRcode=" +
                     res.data[0].QRcode
                 )
                 .then((res) => {

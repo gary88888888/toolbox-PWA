@@ -118,7 +118,7 @@ export default {
 <style scoped>
 .slider{
     width: 100%;
-    height: 200px;
+    height: 22vh;
     margin-bottom: 10px;
     position: relative;
     border-radius: 20px;
@@ -140,7 +140,7 @@ export default {
 .remove{
     position: absolute;
     width:140px;
-    height:200px;
+    height:22vh;
     background-color: #f60;
     border-radius: 20px;
     right: 0;
@@ -148,13 +148,13 @@ export default {
     color:#fff;
     text-align: center;
     font-size: 32px;
-    line-height: 200px;
+    line-height: 22vh;
 }
 .report{
     writing-mode: vertical-lr;
     position: absolute;
     width:140px;
-    height:200px;
+    height:22vh;
     background-color: rgb(185, 18, 54);
     border-radius: 20px;
     left: 0;

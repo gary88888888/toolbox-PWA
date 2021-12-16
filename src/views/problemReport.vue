@@ -224,7 +224,7 @@
 import { history, report } from "../api";
 
 export default {
-  name: "",
+  name: "report",
   data() {
     return {
       data: [],

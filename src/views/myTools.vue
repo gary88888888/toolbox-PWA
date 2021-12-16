@@ -57,8 +57,9 @@
           @report="report(index, tool)"
           class="mt-1"
         >
-          <v-container grid-list-xs>
-            <v-row >
+          <v-container grid-list-xs >
+            <v-card width="100vw" height="13vh" flat>
+              <v-row no-gutters >
               <v-col  align="center">
                 <v-row>
 
@@ -148,6 +149,8 @@
               </v-col>
 
             </v-row>
+            </v-card>
+
             <v-expand-transition>
               <!-- <div v-show="toolExpend[i]===true"  >
                     <v-col>

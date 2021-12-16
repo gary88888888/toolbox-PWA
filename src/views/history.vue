@@ -143,7 +143,7 @@ import axios from "axios";
 import { history, getUser } from "../api.js";
 import Person from "../components/history/person.vue"
 export default {
-  name: "",
+  name: "history",
   data() {
     return {
       tools_orders: [],

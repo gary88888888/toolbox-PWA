@@ -9,9 +9,9 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home,
-    meta:{
-      requiresAuth:true,
-      index:1,
+    meta: {
+      requiresAuth: true,
+      index: 1,
       title: '彈性工具櫃智慧管理系統v1.0'
 
     }
@@ -19,19 +19,19 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: () => import('../views/login.vue'),
-    meta:{
-      index:0,
+    meta: {
+      index: 0,
       title: '彈性工具櫃智慧管理系統v1.0'
     }
   },
 
   {
-    path:'/borrow',
-    name:'Borrow',
-    component:()=> import("../views/borrow.vue"),
-    meta:{
-      requiresAuth:true,
-      index:2,
+    path: '/borrow',
+    name: 'Borrow',
+    component: () => import("../views/borrow.vue"),
+    meta: {
+      requiresAuth: true,
+      index: 2,
       title: '借用登記'
 
 
@@ -39,63 +39,54 @@ const routes = [
   },
 
   {
-    path:'/myTools',
-    name:'myTools',
-    component:myTools,
-    meta:{
-      requiresAuth:true,
-      index:2,
+    path: '/myTools',
+    name: 'myTools',
+    component: myTools,
+    meta: {
+      requiresAuth: true,
+      index: 2,
       title: '我的工具'
 
 
     }
   },
   {
-    path:'/allTools',
-    name:'allTools',
-    component:()=>import("../views/allTools.vue"),
-    meta:{
-      requiresAuth:true,
-      index:2,
+    path: '/allTools',
+    name: 'allTools',
+    component: () => import("../views/allTools.vue"),
+    meta: {
+      requiresAuth: true,
+      index: 2,
       title: '工具一覽'
 
 
     }
   },
   {
-    path:'/report',
-    name:'report',
-    component:()=>import("../views/problemReport.vue"),
-    meta:{
-      requiresAuth:true,
-      index:2,
+    path: '/report',
+    name: 'report',
+    component: () => import("../views/problemReport.vue"),
+    meta: {
+      requiresAuth: true,
+      index: 2,
       title: '問題回報'
 
 
     }
-  },{
-    path:'/history',
-    name:'history',
-    component:()=>import("../views/history.vue"),
-    meta:{
-      requiresAuth:true,
-      index:2,
+  }, {
+    path: '/history',
+    name: 'history',
+    component: () => import("../views/history.vue"),
+    meta: {
+      requiresAuth: true,
+      index: 2,
       title: '紀錄查詢'
 
 
     }
   },
-  {
-    path:'/test',
-    name:'test',
-    component:()=>import("../components/reportProblem.vue"),
-    meta:{
-      requiresAuth:true,
-      index:2,
 
 
-    }
-  },
 ]
 
 const router = new VueRouter({

@@ -2,15 +2,12 @@
   <div class="home">
     <v-container grid-list-xs>
       <div>
-          <div style="position: fixed; z-index: 99; left: 0;right:0;">
+        <div style="position: fixed; z-index: 99; left: 0;right:0;">
         <v-toolbar
           color="#91ede4"
-
           dense
-
           width="100%"
           rounded="lg"
-
         >
           <v-row class="mt-1" justify="center" align="center">
             <v-col justify="center">
@@ -38,40 +35,21 @@
         <v-card-text>
                <v-row justify="center" align="center">
             <v-col>
-              <v-select
-                :items="status"
-                item-text="text"
-                item-value="code"
-                outlined
-                dense
-                chips
-                label="Chips"
-                multiple
-                v-model="statusQuery"
-                 @change="select()"
-              ></v-select>
+
             </v-col>
           </v-row>
           </v-card-text>
         </v-card>
         </div>
-        <v-row align="center" justify="center">
-          <v-card height="auto" width="20vw" class="ma-5" @click="change()">
-            <v-container grid-list-lg>
-              <v-row align="center"><v-col></v-col></v-row>
-              <v-row align-self="end">
-                <v-col style="tex-align=center" align="center"
-                  ><v-icon size="50">{{ "mdi-plus" }}</v-icon></v-col
-                >
-              </v-row>
-            </v-container>
-          </v-card>
+        <v-row align="center" justify="center" >
+
           <v-card
             v-for="(tool, index) in filterItems(tools)"
             :key="index"
             height="auto"
             width="auto"
-            class="ma-5"
+            class="mt-2"
+            rounded="lg"
           >
             <v-hover v-slot="{ hover }">
               <v-container grid-list-xs>
@@ -168,7 +146,7 @@
 import axios from "axios";
 import {getAllTools} from "../api.js"
 export default {
-  name: "",
+  name: "allTools",
   data() {
     return {
         searchQuery:"",

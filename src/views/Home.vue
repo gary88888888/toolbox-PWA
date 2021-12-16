@@ -1,7 +1,10 @@
 <template>
   <div class="home">
     <v-container grid-list-xs>
-      <v-card class="mt-5" color="#5d5e5e" dark>
+      <v-card class="mt-5" color="rgba(23, 138, 173,0.6)" dark rounded="lg">
+        <v-card-title primary-title>
+         <h2>工具狀態及時看板</h2>
+        </v-card-title>
         <v-row>
           <v-col align="center" class="mt-5">
             <radial-progress-bar
@@ -13,7 +16,8 @@
             >
               <h3>{{ info.num_store }} / {{ info.toolsToatl }}</h3>
             </radial-progress-bar>
-            <h2>可用工具</h2>
+            <v-chip label  color="#829cad" ><h1>可用工具</h1></v-chip>
+
           </v-col>
           <v-col align="center" class="mt-5">
             <radial-progress-bar
@@ -25,7 +29,7 @@
             >
               <h3>{{ info.num_broken }} / {{ info.toolsToatl }}</h3>
             </radial-progress-bar>
-            <h2>故障工具</h2>
+            <v-chip label  color="#829cad" ><h1>故障工具</h1></v-chip>
           </v-col>
         </v-row>
         <v-row>
@@ -39,7 +43,7 @@
             >
               <h3>{{ info.num_signed }} / {{ info.toolsToatl }}</h3>
             </radial-progress-bar>
-            <h2>外借工具</h2>
+            <v-chip label  color="#829cad" ><h1>外借工具</h1></v-chip>
           </v-col>
           <v-col align="center">
             <radial-progress-bar
@@ -51,10 +55,19 @@
             >
               <h3>{{ info.num_repair }} / {{ info.toolsToatl }}</h3>
             </radial-progress-bar>
-            <h2>工具維修</h2>
+            <v-chip label  color="#829cad" ><h1>工具維修</h1></v-chip>
+
           </v-col>
         </v-row>
       </v-card>
+    </v-container>
+    <v-container grid-list-xs>
+      <v-card color="rgba(23, 138, 173,0.6)" dark rounded="lg">
+      <v-card-title primary-title>
+        <h2></h2>
+      </v-card-title>
+      </v-card>
+
     </v-container>
 
     <div class="bar">
@@ -79,7 +92,7 @@
               </v-btn>
             </v-badge>
           </v-col>
-          <v-col cols="auto" v-if="this.position == 'admin'" >
+          <v-col cols="auto" v-if="this.position == 'admin'">
             <v-badge
               :value="info.report > 0"
               offset-x="20"
@@ -106,7 +119,7 @@ import axios from "axios";
 import { findMyTools, report } from "../api";
 
 export default {
-  name: "home",
+  name: "Home",
   components: {
     RadialProgressBar,
   },
@@ -129,9 +142,8 @@ export default {
         num_repair: 0,
         num_broken: 0,
         toolsToatl: 0,
-        report:0,
+        report: 0,
       },
-
     };
   },
   methods: {
@@ -173,22 +185,21 @@ export default {
         }
       });
     },
-    countReport(){
+    countReport() {
       let data = new FormData();
       data.append("mode", "count");
-      report(data).then((res)=>{
+      report(data).then((res) => {
         if (res.data != "error") {
-          this.info.report = res.data
+          this.info.report = res.data;
         }
-      })
-    }
+      });
+    },
   },
   computed: {},
   created() {
     this.count();
     this.number();
     this.countReport();
-
   },
 };
 </script>
@@ -196,7 +207,14 @@ export default {
 <style scoped>
 .home {
   height: 100%;
-  background-color: rgb(185, 202, 233);
+  background-color: #e8e8e8;
+
+  background-image: repeating-radial-gradient(
+      circle at 0 0,
+      transparent 0,
+      #e8e8e8 40px
+    ),
+    repeating-linear-gradient(#45bcf755, #45bcf7);
 }
 .bar {
   position: fixed;
